@@ -1,4 +1,5 @@
 name: "Setup SwiftLint"
+description: "Set up a specific version of SwiftLint"
 inputs:
   swiftlint-version:
     description: "SwiftLint version"
