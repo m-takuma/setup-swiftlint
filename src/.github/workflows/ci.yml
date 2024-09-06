@@ -1,0 +1,23 @@
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  test-actions:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        swiftlint-version: ["0.56.0", "0.56.2"]
+    runs-on: ${{ matrix.os }}
+    name: Github Actions Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup SwiftLint
+        uses: ./
+        with:
+          swiftlint-version: ${{ matrix.swiftlint-version }}

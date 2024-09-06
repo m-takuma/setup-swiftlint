@@ -1,0 +1,9 @@
+name: "Setup SwiftLint"
+inputs:
+  swiftlint-version:
+    description: "SwiftLint version"
+    required: true
+    default: "0.56.2"
+runs:
+  using: "node20"
+  main: "dist/index.js"
